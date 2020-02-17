@@ -8,11 +8,11 @@
     -->
     <changeSet id="20200217131500-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="content_id"
+        <addForeignKeyConstraint baseColumnNames="file_data_content_id"
                                  baseTableName="process_log"
-                                 constraintName="fk_process_log_content_id"
+                                 constraintName="fk_process_log_file_data_content_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="content"/>
+                                 referencedTableName="file_content"/>
 
     </changeSet>
 </databaseChangeLog>

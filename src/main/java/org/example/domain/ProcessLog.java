@@ -34,7 +34,7 @@ public class ProcessLog implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Content content;
+    private FileContent fileDataContent;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -84,17 +84,17 @@ public class ProcessLog implements Serializable {
         this.processDate = processDate;
     }
 
-    public Content getContent() {
-        return content;
+    public FileContent getFileDataContent() {
+        return fileDataContent;
     }
 
-    public ProcessLog content(Content content) {
-        this.content = content;
+    public ProcessLog fileDataContent(FileContent fileContent) {
+        this.fileDataContent = fileContent;
         return this;
     }
 
-    public void setContent(Content content) {
-        this.content = content;
+    public void setFileDataContent(FileContent fileContent) {
+        this.fileDataContent = fileContent;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

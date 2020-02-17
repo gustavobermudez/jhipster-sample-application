@@ -46,9 +46,9 @@ export const ProcessLogDetail = (props: IProcessLogDetailProps) => {
             <TextFormat value={processLogEntity.processDate} type="date" format={APP_DATE_FORMAT} />
           </dd>
           <dt>
-            <Translate contentKey="jhipsterSampleApplicationApp.processLog.content">Content</Translate>
+            <Translate contentKey="jhipsterSampleApplicationApp.processLog.fileDataContent">File Data Content</Translate>
           </dt>
-          <dd>{processLogEntity.content ? processLogEntity.content.id : ''}</dd>
+          <dd>{processLogEntity.fileDataContent ? processLogEntity.fileDataContent.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/process-log" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

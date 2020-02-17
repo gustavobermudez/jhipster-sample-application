@@ -20,6 +20,10 @@ import processLog, {
 import content, {
   ContentState
 } from 'app/entities/content/content.reducer';
+// prettier-ignore
+import fileContent, {
+  FileContentState
+} from 'app/entities/file-content/file-content.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -35,6 +39,7 @@ export interface IRootState {
   readonly settings: SettingsState;
   readonly processLog: ProcessLogState;
   readonly content: ContentState;
+  readonly fileContent: FileContentState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -52,6 +57,7 @@ const rootReducer = combineReducers<IRootState>({
   settings,
   processLog,
   content,
+  fileContent,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });
