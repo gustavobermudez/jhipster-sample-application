@@ -1,0 +1,9 @@
+/**
+ * Reward.
+ */
+
+entity ProcessLog {
+    fileName String required,
+    fileValue String,
+    processDate ZonedDateTime
+}
