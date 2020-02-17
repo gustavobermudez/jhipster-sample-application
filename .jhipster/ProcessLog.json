@@ -17,7 +17,16 @@
             "fieldType": "ZonedDateTime"
         }
     ],
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "content",
+            "otherEntityRelationshipName": "document",
+            "relationshipName": "content",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
     "changelogDate": "20200217131500",
     "javadoc": "Reward.",
     "entityTableName": "process_log",

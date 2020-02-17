@@ -32,6 +32,10 @@ public class ProcessLog implements Serializable {
     @Column(name = "process_date")
     private ZonedDateTime processDate;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Content content;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -78,6 +82,19 @@ public class ProcessLog implements Serializable {
 
     public void setProcessDate(ZonedDateTime processDate) {
         this.processDate = processDate;
+    }
+
+    public Content getContent() {
+        return content;
+    }
+
+    public ProcessLog content(Content content) {
+        this.content = content;
+        return this;
+    }
+
+    public void setContent(Content content) {
+        this.content = content;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
