@@ -18,7 +18,8 @@
       },
       "fileName": "File Name",
       "fileValue": "File Value",
-      "processDate": "Process Date"
+      "processDate": "Process Date",
+      "content": "Content"
     }
   }
 }
