@@ -9,10 +9,10 @@ entity ProcessLog {
 }
 
 
-entity Content {
-  data Blob required
+entity FileContent {
+  fileDataContent Blob required
 }
 
 relationship OneToOne {
-  ProcessLog{content} to Content{document(id) required}
+  ProcessLog{fileDataContent} to FileContent{processLog(id) required}
 }
