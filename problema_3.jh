@@ -4,6 +4,6 @@
 
 entity ProcessLog {
     fileName String required,
-    fileValue String,
+    fileValue Double,
     processDate ZonedDateTime
 }

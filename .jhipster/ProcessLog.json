@@ -10,7 +10,7 @@
         },
         {
             "fieldName": "fileValue",
-            "fieldType": "String"
+            "fieldType": "Double"
         },
         {
             "fieldName": "processDate",

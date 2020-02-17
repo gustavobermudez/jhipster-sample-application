@@ -3,7 +3,7 @@ import { Moment } from 'moment';
 export interface IProcessLog {
   id?: number;
   fileName?: string;
-  fileValue?: string;
+  fileValue?: number;
   processDate?: Moment;
 }
 

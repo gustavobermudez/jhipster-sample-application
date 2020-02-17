@@ -94,7 +94,7 @@ export const ProcessLogUpdate = (props: IProcessLogUpdateProps) => {
                 <Label id="fileValueLabel" for="process-log-fileValue">
                   <Translate contentKey="jhipsterSampleApplicationApp.processLog.fileValue">File Value</Translate>
                 </Label>
-                <AvField id="process-log-fileValue" type="text" name="fileValue" />
+                <AvField id="process-log-fileValue" type="string" className="form-control" name="fileValue" />
               </AvGroup>
               <AvGroup>
                 <Label id="processDateLabel" for="process-log-processDate">
