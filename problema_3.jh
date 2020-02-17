@@ -9,8 +9,8 @@ entity ProcessLog {
 }
 
 
-entity Content {
-  data Blob required
+entity FileContent {
+  fileDataContent Blob required
 }
 
 relationship OneToOne {
