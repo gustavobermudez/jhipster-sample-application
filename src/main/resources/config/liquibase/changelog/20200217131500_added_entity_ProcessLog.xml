@@ -19,7 +19,7 @@
             <column name="file_name" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-            <column name="file_value" type="varchar(255)">
+            <column name="file_value" type="double">
                 <constraints nullable="true" />
             </column>
             <column name="process_date" type="datetime">
@@ -50,7 +50,7 @@
                   tableName="process_log">
             <column name="id" type="numeric"/>
             <column name="file_name" type="string"/>
-            <column name="file_value" type="string"/>
+            <column name="file_value" type="numeric"/>
             <column name="process_date" type="datetime"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>

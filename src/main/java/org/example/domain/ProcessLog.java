@@ -27,7 +27,7 @@ public class ProcessLog implements Serializable {
     private String fileName;
 
     @Column(name = "file_value")
-    private String fileValue;
+    private Double fileValue;
 
     @Column(name = "process_date")
     private ZonedDateTime processDate;
@@ -54,16 +54,16 @@ public class ProcessLog implements Serializable {
         this.fileName = fileName;
     }
 
-    public String getFileValue() {
+    public Double getFileValue() {
         return fileValue;
     }
 
-    public ProcessLog fileValue(String fileValue) {
+    public ProcessLog fileValue(Double fileValue) {
         this.fileValue = fileValue;
         return this;
     }
 
-    public void setFileValue(String fileValue) {
+    public void setFileValue(Double fileValue) {
         this.fileValue = fileValue;
     }
 
@@ -102,7 +102,7 @@ public class ProcessLog implements Serializable {
         return "ProcessLog{" +
             "id=" + getId() +
             ", fileName='" + getFileName() + "'" +
-            ", fileValue='" + getFileValue() + "'" +
+            ", fileValue=" + getFileValue() +
             ", processDate='" + getProcessDate() + "'" +
             "}";
     }

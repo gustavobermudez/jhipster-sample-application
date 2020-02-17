@@ -73,7 +73,7 @@ class ProcessLogGatlingTest extends Simulation {
             .body(StringBody("""{
                 "id":null
                 , "fileName":"SAMPLE_TEXT"
-                , "fileValue":"SAMPLE_TEXT"
+                , "fileValue":null
                 , "processDate":"2020-01-01T00:00:00.000Z"
                 }""")).asJson
             .check(status.is(201))

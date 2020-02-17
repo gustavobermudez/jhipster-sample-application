@@ -41,8 +41,8 @@ public class ProcessLogResourceIT {
     private static final String DEFAULT_FILE_NAME = "AAAAAAAAAA";
     private static final String UPDATED_FILE_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_FILE_VALUE = "AAAAAAAAAA";
-    private static final String UPDATED_FILE_VALUE = "BBBBBBBBBB";
+    private static final Double DEFAULT_FILE_VALUE = 1D;
+    private static final Double UPDATED_FILE_VALUE = 2D;
 
     private static final ZonedDateTime DEFAULT_PROCESS_DATE = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_PROCESS_DATE = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
@@ -183,7 +183,7 @@ public class ProcessLogResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(processLog.getId().intValue())))
             .andExpect(jsonPath("$.[*].fileName").value(hasItem(DEFAULT_FILE_NAME)))
-            .andExpect(jsonPath("$.[*].fileValue").value(hasItem(DEFAULT_FILE_VALUE)))
+            .andExpect(jsonPath("$.[*].fileValue").value(hasItem(DEFAULT_FILE_VALUE.doubleValue())))
             .andExpect(jsonPath("$.[*].processDate").value(hasItem(sameInstant(DEFAULT_PROCESS_DATE))));
     }
     
@@ -199,7 +199,7 @@ public class ProcessLogResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(processLog.getId().intValue()))
             .andExpect(jsonPath("$.fileName").value(DEFAULT_FILE_NAME))
-            .andExpect(jsonPath("$.fileValue").value(DEFAULT_FILE_VALUE))
+            .andExpect(jsonPath("$.fileValue").value(DEFAULT_FILE_VALUE.doubleValue()))
             .andExpect(jsonPath("$.processDate").value(sameInstant(DEFAULT_PROCESS_DATE)));
     }
 
