@@ -46,7 +46,7 @@ export const ProcessLog = (props: IProcessLogProps) => {
                   <Translate contentKey="jhipsterSampleApplicationApp.processLog.processDate">Process Date</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="jhipsterSampleApplicationApp.processLog.content">Content</Translate>
+                  <Translate contentKey="jhipsterSampleApplicationApp.processLog.fileDataContent">File Data Content</Translate>
                 </th>
                 <th />
               </tr>
@@ -64,7 +64,13 @@ export const ProcessLog = (props: IProcessLogProps) => {
                   <td>
                     <TextFormat type="date" value={processLog.processDate} format={APP_DATE_FORMAT} />
                   </td>
-                  <td>{processLog.content ? <Link to={`content/${processLog.content.id}`}>{processLog.content.id}</Link> : ''}</td>
+                  <td>
+                    {processLog.fileDataContent ? (
+                      <Link to={`file-content/${processLog.fileDataContent.id}`}>{processLog.fileDataContent.id}</Link>
+                    ) : (
+                      ''
+                    )}
+                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${processLog.id}`} color="info" size="sm">

@@ -9,6 +9,7 @@
         "main": "Entidades",
         "processLog": "Process Log",
         "content": "Content",
+        "fileContent": "File Content",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

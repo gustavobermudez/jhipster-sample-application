@@ -20,9 +20,9 @@
     "relationships": [
         {
             "relationshipType": "one-to-one",
-            "otherEntityName": "content",
-            "otherEntityRelationshipName": "document",
-            "relationshipName": "content",
+            "otherEntityName": "fileContent",
+            "otherEntityRelationshipName": "processLog",
+            "relationshipName": "fileDataContent",
             "otherEntityField": "id",
             "ownerSide": true
         }

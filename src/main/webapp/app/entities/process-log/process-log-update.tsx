@@ -7,8 +7,8 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { IContent } from 'app/shared/model/content.model';
-import { getEntities as getContents } from 'app/entities/content/content.reducer';
+import { IFileContent } from 'app/shared/model/file-content.model';
+import { getEntities as getFileContents } from 'app/entities/file-content/file-content.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './process-log.reducer';
 import { IProcessLog } from 'app/shared/model/process-log.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
@@ -17,10 +17,10 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface IProcessLogUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const ProcessLogUpdate = (props: IProcessLogUpdateProps) => {
-  const [contentId, setContentId] = useState('0');
+  const [fileDataContentId, setFileDataContentId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { processLogEntity, contents, loading, updating } = props;
+  const { processLogEntity, fileContents, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/process-log');
@@ -33,7 +33,7 @@ export const ProcessLogUpdate = (props: IProcessLogUpdateProps) => {
       props.getEntity(props.match.params.id);
     }
 
-    props.getContents();
+    props.getFileContents();
   }, []);
 
   useEffect(() => {
@@ -115,13 +115,13 @@ export const ProcessLogUpdate = (props: IProcessLogUpdateProps) => {
                 />
               </AvGroup>
               <AvGroup>
-                <Label for="process-log-content">
-                  <Translate contentKey="jhipsterSampleApplicationApp.processLog.content">Content</Translate>
+                <Label for="process-log-fileDataContent">
+                  <Translate contentKey="jhipsterSampleApplicationApp.processLog.fileDataContent">File Data Content</Translate>
                 </Label>
-                <AvInput id="process-log-content" type="select" className="form-control" name="content.id">
+                <AvInput id="process-log-fileDataContent" type="select" className="form-control" name="fileDataContent.id">
                   <option value="" key="0" />
-                  {contents
-                    ? contents.map(otherEntity => (
+                  {fileContents
+                    ? fileContents.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
                           {otherEntity.id}
                         </option>
@@ -151,7 +151,7 @@ export const ProcessLogUpdate = (props: IProcessLogUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
-  contents: storeState.content.entities,
+  fileContents: storeState.fileContent.entities,
   processLogEntity: storeState.processLog.entity,
   loading: storeState.processLog.loading,
   updating: storeState.processLog.updating,
@@ -159,7 +159,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getContents,
+  getFileContents,
   getEntity,
   updateEntity,
   createEntity,
