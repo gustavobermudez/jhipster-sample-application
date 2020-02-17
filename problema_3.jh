@@ -7,3 +7,12 @@ entity ProcessLog {
     fileValue Double,
     processDate ZonedDateTime
 }
+
+
+entity Content {
+  data Blob required
+}
+
+relationship OneToOne {
+  ProcessLog{content} to Content{document(id) required}
+}
