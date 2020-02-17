@@ -6,6 +6,7 @@ import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 
 import ProcessLog from './process-log';
 import Content from './content';
+import FileContent from './file-content';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 const Routes = ({ match }) => (
@@ -14,6 +15,7 @@ const Routes = ({ match }) => (
       {/* prettier-ignore */}
       <ErrorBoundaryRoute path={`${match.url}process-log`} component={ProcessLog} />
       <ErrorBoundaryRoute path={`${match.url}content`} component={Content} />
+      <ErrorBoundaryRoute path={`${match.url}file-content`} component={FileContent} />
       {/* jhipster-needle-add-route-path - JHipster will add routes here */}
     </Switch>
   </div>
